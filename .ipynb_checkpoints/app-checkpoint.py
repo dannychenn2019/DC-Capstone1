@@ -124,10 +124,10 @@ elif page == "Machine Learning":
         - Gender (encoded)
     """)
 
-    # Encoding categorical variables (like 'Gender', 'Parental_Education_Level', etc.)
+    # Encoding categorical variables 
     df_encoded = df.copy()
 
-    # Encode categorical variables (if applicable)
+    # Encode categorical variables 
     df_encoded = pd.get_dummies(df_encoded, drop_first=True)
 
     # Check if Final_Exam_Score column exists in the dataset
@@ -155,7 +155,7 @@ elif page == "Machine Learning":
         # Make predictions
         y_pred = model.predict(X_test_scaled)
 
-        # Calculate R² (Coefficient of Determination)
+        # Calculate R² 
         r2 = r2_score(y_test, y_pred)
 
         # Display the R² score
@@ -169,7 +169,7 @@ elif page == "Machine Learning":
             the model is able to explain most of the variance in the data.
         """)
 
-        # Optional: Display a scatter plot of actual vs predicted values
+        # scatter plot of actual vs predicted values
         st.subheader("Actual vs Predicted Scores")
         fig, ax = plt.subplots()
         ax.scatter(y_test, y_pred)
